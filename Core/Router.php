@@ -1,4 +1,5 @@
 <?php 
+namespace Core; 
 
 class Router {
     protected $routes = [];
@@ -31,12 +32,17 @@ class Router {
     return false;
     }
     public function dispatch($url){
+
+        $url = $this->removeQueryStringVariables($url);
+
         if($this->match($url)){
+            
             $controller = $this->params['controller'];
             $controller = $this->convertToStudlyCaps($controller);
+            $controller = 'App\Controllers\\'.$controller;
 
             if(class_exists($controller)){
-                $controller_object = new $controller();
+                $controller_object = new $controller($this->params);
 
                 $action = $this->params['action'];
                 $action = $this->convertToCameCase($action);
@@ -59,6 +65,14 @@ class Router {
     public function convertToCameCase($text){
         return lcfirst($this->convertToStudlyCaps($text));
     } 
+    public function removeQueryStringVariables($url){
+        $parts = explode('&',$url,2);
+        if(strpos($parts[0],'=')=== false){
+            return $url = $parts[0];
+        }else{
+            return $url = '';
+        }
+    }
     public function getParams(){
         return $this->params; 
     }

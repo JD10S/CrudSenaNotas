@@ -1,11 +1,13 @@
 <?php 
-//Definimos el Router
-require '../Core/Router.php';
-//llamamos los controladores
-require '../App/Controllers/Home.php';
-require '../App/Controllers/Xd.php';
-require '../App/Controllers/Post.php';
-$router = new Router();
+//Auto require
+spl_autoload_register(function($class){
+    $path = dirname(__DIR__);
+    $file = $path.'/'.str_replace('\\','/',$class).'.php';
+    if(is_readable($file)){
+        require $file;
+    }
+});
+$router = new Core\Router();
 //añadiendo rutas utiliza '{}' para definir una variable.
 $router->add('',['controller'=>'Home', 'action' => 'index']);
 $router->add('Hola',['controller'=>'Home', 'action' => 'saludo']);
@@ -14,15 +16,5 @@ $router->add('fuaeldiego/diegol',['controller'=>'xD', 'action' => 'fua a casa in
 $router->add('{controller}/{action}');
 $router->add('{controller}/{numerodecopas:\d+}/{action}');
 
-//Definimos url y la enviamos a la funcion match y esta abastraiga metodo y controlador
-/*$url = strtolower($_SERVER['QUERY_STRING']);
-
-if($router->match($url)){
-    echo '<pre>';
-    var_dump($router->getParams());
-    echo '<prev>';
-}else{
-    echo "no se ha encontrado la URL: ".$url;
-}*/
-
+//llamando la función de dispatch del router
 $router->dispatch($_SERVER['QUERY_STRING']);

@@ -1,5 +1,7 @@
 <?php
-class Xd {
+namespace App\Controllers;
+
+class Xd extends \Core\Controller{
     public function fua() {
         echo 'FUAAA EL DIEGO PAAAA';
     }
