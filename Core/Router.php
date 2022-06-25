@@ -49,7 +49,9 @@ class Router {
             }else{
                 echo 'No se ha hayado el controlador '.$controller;
             }
-        }echo 'No se ha hayado la ruta '.$url;
+        }else{
+            echo 'No se ha hayado la ruta '.$url;
+        }
     }
     public function convertToStudlyCaps($text){
         return str_replace(' ','', ucwords(str_replace('-',' ', $text)));

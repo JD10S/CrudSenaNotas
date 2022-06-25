@@ -6,4 +6,7 @@ class Xd {
     public function fuaACasaIngle(){
         echo 'ole oleee ole ola el que no salta, es un ingle';
     }
+    public function argentina(){
+        echo '21 copaaaaaaa';
+    }
 }

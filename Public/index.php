@@ -12,11 +12,12 @@ $router->add('Hola',['controller'=>'Home', 'action' => 'saludo']);
 $router->add('fuaeldiego',['controller'=>'xD', 'action' => 'fua']);
 $router->add('fuaeldiego/diegol',['controller'=>'xD', 'action' => 'fua a casa ingle']);
 $router->add('{controller}/{action}');
+$router->add('{controller}/{numerodecopas:\d+}/{action}');
 
 //Definimos url y la enviamos a la funcion match y esta abastraiga metodo y controlador
-$url = strtolower($_SERVER['QUERY_STRING']);
+/*$url = strtolower($_SERVER['QUERY_STRING']);
 
-/*if($router->match($url)){
+if($router->match($url)){
     echo '<pre>';
     var_dump($router->getParams());
     echo '<prev>';
@@ -24,4 +25,4 @@ $url = strtolower($_SERVER['QUERY_STRING']);
     echo "no se ha encontrado la URL: ".$url;
 }*/
 
-$router->dispatch($url);
+$router->dispatch($_SERVER['QUERY_STRING']);
