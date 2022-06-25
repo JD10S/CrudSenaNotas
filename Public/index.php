@@ -14,9 +14,9 @@ $router->add('fuaeldiego/diegol',['controller'=>'xD', 'action' => 'fua a casa in
 $router->add('{controller}/{action}');
 
 //Definimos url y la enviamos a la funcion match y esta abastraiga metodo y controlador
-/*$url = strtolower($_SERVER['QUERY_STRING']);
+$url = strtolower($_SERVER['QUERY_STRING']);
 
-if($router->match($url)){
+/*if($router->match($url)){
     echo '<pre>';
     var_dump($router->getParams());
     echo '<prev>';
@@ -24,4 +24,4 @@ if($router->match($url)){
     echo "no se ha encontrado la URL: ".$url;
 }*/
 
-$router->dispatch($_SERVER['QUERY_STRING']);
+$router->dispatch($url);

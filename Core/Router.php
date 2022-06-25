@@ -34,11 +34,13 @@ class Router {
         if($this->match($url)){
             $controller = $this->params['controller'];
             $controller = $this->convertToStudlyCaps($controller);
+
             if(class_exists($controller)){
                 $controller_object = new $controller();
 
                 $action = $this->params['action'];
-                $action = $this->convertToCameCase();
+                $action = $this->convertToCameCase($action);
+
                 if(is_callable([$controller_object, $action])){
                     $controller_object->$action();
                 }else{
@@ -50,11 +52,11 @@ class Router {
         }echo 'No se ha hayado la ruta '.$url;
     }
     public function convertToStudlyCaps($text){
-        return str_replace(' ','',ucfirst(str_replace('-', ' ', $text)));
+        return str_replace(' ','', ucwords(str_replace('-',' ', $text)));
     }
     public function convertToCameCase($text){
         return lcfirst($this->convertToStudlyCaps($text));
-    }
+    } 
     public function getParams(){
         return $this->params; 
     }
