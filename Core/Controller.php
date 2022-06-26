@@ -11,6 +11,16 @@ abstract class Controller {
 
     public function __call($name, $args)
     {
+        if(method_exists($this,$name)){
+        $method = $name;
+
+        if($this->before() !== false){
+                call_user_func_array([$this, $method], $args);
+                $this->after();
+            }else{
+            echo "método ".$method." no ha sido entonctrado en el controlador ".get_class($this);
+        }
+        }else{
         $method = $name . 'Action';
 
         if(method_exists($this, $method)){
@@ -21,6 +31,7 @@ abstract class Controller {
         }else{
             echo "método ".$method." no ha sido entonctrado en el controlador ".get_class($this);
         }
+    }
 
     }
     protected function before(){
