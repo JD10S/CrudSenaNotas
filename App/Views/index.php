@@ -10,8 +10,12 @@
 <body>
     <h1>SIIIIIIUUUUUUU</h1>
     vamooo <br>
-    Copas Argentina: <?php echo htmlspecialchars($copasargentina);?> <br>
-    Copas brasil: <?php echo htmlspecialchars($copasbrasil);?>
+    Copas Argentina: <?=htmlspecialchars($nombre);?> <br>
+    Copas brasil: <?=htmlspecialchars($apellido);?>
+    como dice el bicho: <?=htmlspecialchars($prueba);?>
+    <form action="home/saludo">
+        <button type="submit">A ver que pasa</button>
+    </form>
 
 </body>
 </html>

@@ -7,14 +7,9 @@ spl_autoload_register(function($class){
         require $file;
     }
 });
+//llamando router; 
 $router = new Core\Router();
-//añadiendo rutas utiliza '{}' para definir una variable.
-$router->add('',['controller'=>'Home', 'action' => 'index']);
-$router->add('Hola',['controller'=>'Home', 'action' => 'saludo']);
-$router->add('fuaeldiego',['controller'=>'xD', 'action' => 'fua']);
-$router->add('fuaeldiego/diegol',['controller'=>'xD', 'action' => 'fua a casa ingle']);
-$router->add('{controller}/{action}');
-$router->add('admin/{controller}/{action}', ['namespace' => 'Admin']);
-
+//requiriendo las rutas
+require dirname(__DIR__).'/Core/Routes.php';
 //llamando la función de dispatch del router
 $router->dispatch($_SERVER['QUERY_STRING']);
