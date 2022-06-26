@@ -2,7 +2,7 @@
 namespace App\Controllers\Admin;
 
 class User extends \Core\Controller {
-    public function nose(){
+    protected function noseAction(){
         echo 'saludando desde admin, kpo';
     }
 }
