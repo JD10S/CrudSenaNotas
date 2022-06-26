@@ -1,10 +1,11 @@
 <?php
 namespace App\Controllers;
+use \Core\View;
 
 class Home extends \Core\Controller{
     public function index() {
-        echo 'Hola desde el index paaa'; 
-
+        View::render('index.php', ['copasargentina' => '21', 'copasbrasil' => '20']);
+        //View::renderTwig('index.html', ['copasargentina' => '21', 'copasbrasil' => '20']);
     }
     public function saludoAction() {
         echo 'Saludando humildemente xd';
