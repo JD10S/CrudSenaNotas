@@ -23,5 +23,11 @@ abstract class Controller {
         }
 
     }
+    protected function before(){
+        echo 'el más grande ';
+    }
+    protected function after() {
+        echo ' xd';
+    }
 
 }

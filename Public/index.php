@@ -14,7 +14,7 @@ $router->add('Hola',['controller'=>'Home', 'action' => 'saludo']);
 $router->add('fuaeldiego',['controller'=>'xD', 'action' => 'fua']);
 $router->add('fuaeldiego/diegol',['controller'=>'xD', 'action' => 'fua a casa ingle']);
 $router->add('{controller}/{action}');
-$router->add('{controller}/{numerodecopas:\d+}/{action}');
+$router->add('admin/{controller}/{action}', ['namespace' => 'Admin']);
 
 //llamando la función de dispatch del router
 $router->dispatch($_SERVER['QUERY_STRING']);
