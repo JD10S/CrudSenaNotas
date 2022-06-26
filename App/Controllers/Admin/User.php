@@ -1,5 +1,5 @@
 <?php
-namespace \App\Controllers\Admin;
+namespace App\Controllers\Admin;
 
 class User extends \Core\Controller {
     public function nose(){
