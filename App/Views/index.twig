@@ -1,4 +1,4 @@
-{% extends "plantillas/index.html" %}
+{% extends "plantillas/index.twig" %}
 {% block Saludo %} {% endblock %}
 {% block cuantas_copas %}  
 {% if nombre %}
@@ -7,4 +7,4 @@
     ya no hola
 {% endif %}
 {% endblock %}
-{% block piedepagina %} {% include 'plantillas/prueba.html' with {datoquenoimporta:session.nombre} only %}{% endblock %}
+{% block piedepagina %} {% include 'plantillas/prueba.twig' with {datoquenoimporta:session.nombre} only %}{% endblock %}

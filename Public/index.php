@@ -1,14 +1,6 @@
 <?php 
-require '../Vendor/autoload.php';
-
-//Auto require
-spl_autoload_register(function($class){
-    $path = dirname(__DIR__);
-    $file = $path.'/'.str_replace('\\','/',$class).'.php';
-    if(is_readable($file)){
-        require $file;
-    }
-});
+//llamando el autoload de composer
+require dirname(__DIR__).'/Vendor/autoload.php';
 //llamando router; 
 $router = new Core\Router();
 //requiriendo las rutas
