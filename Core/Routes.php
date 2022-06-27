@@ -7,4 +7,4 @@ $router->add('Hola',['controller'=>'Home', 'action' => 'saludo']);
 $router->add('fuaeldiego',['controller'=>'xD', 'action' => 'fua']);
 $router->add('fuaeldiego/diegol',['controller'=>'xD', 'action' => 'fua a casa ingle']);
 $router->add('{controller}/{action}');
-$router->add('admin/{controller}/{action}', ['namespace' => 'Admin']);
+$router->add('{namespace}/{controller}/{action}');

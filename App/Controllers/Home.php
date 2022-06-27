@@ -8,20 +8,19 @@ class Home extends \Core\Controller{
         $_SESSION['nombre'] = 'Juan David';
         $_SESSION['apellido'] = 'Castañeda Betancourt';
         $hola = [];
-        $hola['prueba'] = 'siuuuu';
+        $hola['prueba'] = ['siuuuu', 'xd', 'nooooo'];
         $hola['prueba2'] = 'require ./saludoxd.php';
         $data = [
-            'nombre' => $_SESSION['nombre'],
-            'apellido' => $_SESSION['apellido'],
+            'session' => $_SESSION,
             'prueba' => $hola['prueba'],
             'prueba2' => $hola['prueba2']
         ];
         //View::render('index.php' ,$data);
-        View::renderTemplate('index.html', $data);
+        View::renderTemplate('index.twig', $data);
     }
-    public function saludoAction() {
+    protected function saludo() {
         session_start();
-        View::renderTemplate('saludoxd.php',$_SESSION);
+        View::renderTemplate('index.twig',$_SESSION);
     }
     public function argentinaAction() {
         echo '<p> Copas de argentina: <pre>'.htmlspecialchars(print_r($this->route_params, true)).'</pre> </p>';

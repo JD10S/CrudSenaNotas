@@ -1,0 +1,10 @@
+{% extends "plantillas/index.html" %}
+{% block Saludo %} {% endblock %}
+{% block cuantas_copas %}  
+{% if nombre %}
+    Hola {{nombre}}
+{% else %}
+    ya no hola
+{% endif %}
+{% endblock %}
+{% block piedepagina %} {% include 'plantillas/prueba.html' with {datoquenoimporta:session.nombre} only %}{% endblock %}
