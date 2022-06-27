@@ -1,4 +1,6 @@
 <?php 
+require '../Vendor/autoload.php';
+
 //Auto require
 spl_autoload_register(function($class){
     $path = dirname(__DIR__);

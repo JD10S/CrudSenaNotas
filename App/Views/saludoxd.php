@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hola: <?= htmlspecialchars($nombre.' '. $apellido)?></h1>
-    como dice el bicho: <?=htmlspecialchars($prueba);?>
+    <h1>Hola: {{nombre}} {{apellido}} </h1>
+    como dice el bicho: {{prueba}}
 </body>
 </html>
