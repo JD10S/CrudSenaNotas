@@ -50,10 +50,10 @@ class Router {
                 if(is_callable([$controller_object, $action])){
                     $controller_object->$action();
                 }else{
-                    throw new \Exception('No se ha hayado el metodo '.$action.' en el controlador '.$controller);
+                    throw new \Exception('No se ha hayado el metodo '.$action.' en el controlador '.$controller, 404);
                 }
             }else{
-                throw new \Exception('No se ha hayado el controlador '.$controller);
+                throw new \Exception('No se ha hayado el controlador '.$controller, 404);
             }
         }else{
             throw new \Exception('no se ha hayado la URL',404);

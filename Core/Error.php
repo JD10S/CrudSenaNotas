@@ -2,7 +2,7 @@
 
 namespace Core;
 
-class error {
+class Error {
     public static function errorHandler($level, $message, $file, $line) {
         if(error_reporting() != 0){
             throw new \ErrorException($message, 0, $level, $file, $line);
@@ -29,7 +29,7 @@ class error {
             $message = "Excepción no atrapada: '".get_class($exception). "' ";
             $message .= "Con mensaje: '".$exception->getMessage()."' ";
             $message .= "\nStack trace: ".$exception->getTraceAsString();
-            $message .= "\nTLanzada en ".$exception->getFile(). " en la linea: ".$exception->getLine();
+            $message .= "\nLanzada en ".$exception->getFile(). " en la linea: ".$exception->getLine();
 
             error_log($message);
             }

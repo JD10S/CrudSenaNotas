@@ -18,7 +18,7 @@ abstract class Controller {
                 call_user_func_array([$this, $method], $args);
                 $this->after();
             }else{
-            throw new \Exception("El metodo $method no ha sido encontrado en el controlador ".get_class($this));
+            throw new \Exception("Usuario no autorizado para acceder a el metodo ".$method. " de la clase ".get_class($this), 401);
             }
         }else{
         $method = $name . 'Action';
@@ -29,13 +29,13 @@ abstract class Controller {
             $this->after();
             }
         }else{
-           throw new \Exception("El metodo $method no ha sido encontrado en el controlador ".get_class($this));
+           throw new \Exception("El metodo $method no ha sido encontrado en el controlador ".get_class($this), 404);
         }
     }
 
     }
     protected function before(){
-       echo 'Acción filtro, crack';
+       return false; 
         
     }
     protected function after() {
