@@ -1,10 +1,31 @@
-{% extends "plantillas/index.twig" %}
-{% block Saludo %} {% endblock %}
-{% block cuantas_copas %}  
-{% if nombre %}
-    Hola {{nombre}}
-{% else %}
-    ya no hola
-{% endif %}
-{% endblock %}
-{% block piedepagina %} {% include 'plantillas/prueba.twig' with {datoquenoimporta:session.nombre} only %}{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vamoxd</title>
+    <style type="text/CSS">
+        h1{
+            color: cyan;
+        }
+    </style>
+</head>
+<body>
+    <h1> Hola </h1>
+    <ul>
+    {% if posts.error is defined %} 
+
+    <h3>{{posts.error}}</h3>
+
+    {% else %}
+    {% for post in posts %}
+     <li>
+        <strong> {{post.id}} | {{post.nombre}} </strong> {{post.pais}}
+    </li>
+    {% endfor %}
+    {% endif %}
+
+    <ul>
+</body>
+</html>

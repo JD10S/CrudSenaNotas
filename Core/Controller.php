@@ -18,8 +18,8 @@ abstract class Controller {
                 call_user_func_array([$this, $method], $args);
                 $this->after();
             }else{
-            echo "método ".$method." no ha sido entonctrado en el controlador ".get_class($this);
-        }
+            throw new \Exception("El metodo $method no ha sido encontrado en el controlador ".get_class($this));
+            }
         }else{
         $method = $name . 'Action';
 
@@ -29,13 +29,14 @@ abstract class Controller {
             $this->after();
             }
         }else{
-            echo "método ".$method." no ha sido entonctrado en el controlador ".get_class($this);
+           throw new \Exception("El metodo $method no ha sido encontrado en el controlador ".get_class($this));
         }
     }
 
     }
     protected function before(){
-        echo 'el más grande ';
+       echo 'Acción filtro, crack';
+        
     }
     protected function after() {
         echo ' xd';

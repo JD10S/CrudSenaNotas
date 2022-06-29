@@ -50,13 +50,13 @@ class Router {
                 if(is_callable([$controller_object, $action])){
                     $controller_object->$action();
                 }else{
-                    echo 'No se ha hayado el metodo '.$action.' en el controlador '.$controller;
+                    throw new \Exception('No se ha hayado el metodo '.$action.' en el controlador '.$controller);
                 }
             }else{
-                echo 'No se ha hayado el controlador '.$controller;
+                throw new \Exception('No se ha hayado el controlador '.$controller);
             }
         }else{
-            echo 'No se ha hayado la ruta '.$url;
+            throw new \Exception('no se ha hayado la URL',404);
         }
     }
     public function convertToStudlyCaps($text){
