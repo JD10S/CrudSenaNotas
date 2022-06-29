@@ -3,7 +3,7 @@ namespace App\Models;
 
 use PDO; 
 
-class Post extends \Core\Model{
+class Ejemplo extends \Core\Model{
     public static function getAll() {
         try {
             $db = static::getDB();
