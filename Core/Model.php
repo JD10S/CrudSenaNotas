@@ -5,7 +5,7 @@ use App\Config;
 
 abstract class Model {
     protected static function getDB() {
-        static $db = null; 
+        $db = null; 
         if ($db === null){
             
             $DB_conect = 'mysql:host='.Config::DB_Host.';dbname='.Config::DB_Name;

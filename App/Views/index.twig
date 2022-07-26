@@ -1,12 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-</head>
+{% extends 'plantilla.twig'%}
+{% block body %}
 <body>
-    <h1> Holaaaa </h1>
-</body>
-</html>
+    <div class="container text-center">
+        <h1 style=""> Notas de estudiantes </h1>
+      <a href="?Home/registrar" class="btn btn-primary">Registrar otro estudiante</a>
+    </div> <br>
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">TI</th>
+      <th scope="col">Nombres</th>
+      <th scope="col">Apellidos</th>
+      <th scope="col">Nota 1</th>
+      <th scope="col">Nota 2</th> 
+      <th scope="col">Nota 3</th>
+      <th scope="col">Promedio</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% if posts %}
+
+    {% for datos in posts %}
+    <tr>
+      <th scope="row"> {{datos.doc}} </th>
+      <td> {{datos.nom}} </td>
+      <td> {{datos.ape}} </td>
+      <td>{{datos.not1}}</td>
+      <td>{{datos.not2}}</td>
+      <td>{{datos.not3}}</td>
+      <td>{{datos.prom}}</td>
+    </tr>
+    {% endfor %}
+    {% endif %}
+  </tbody>
+</table>
+{% endblock %}

@@ -6,7 +6,7 @@ class Config {
     // Host de la base de datos
     const DB_Host = 'localhost';
     // Nombre de la base de datos
-    const DB_Name = 'prueba';
+    const DB_Name = 'notas';
     // Nombre de usuario de la base de datos
     const DB_User = 'root';
     // Contraseña base de datos
