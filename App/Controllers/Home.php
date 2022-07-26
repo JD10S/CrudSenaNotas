@@ -18,7 +18,7 @@ class Home extends \Core\Controller{
             Ejemplo::InsertData($_POST);
             $this->index(); 
         }else{
-            View::renderTemplate('registro.twig', ['error' => 'Numero de documento ya existe']);
+            View::renderTemplate('registro.twig', ['error' => 'El número de documento ya existe']);
         }
     }
 }

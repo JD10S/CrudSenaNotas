@@ -17,36 +17,37 @@
             {% endif %}
                 <div class="mb-3">
              <label for="exampleInputEmail1" class="form-label">Nombre del estudiante</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="Nombre">
+                <input type="text" class="form-control" id="nombre" aria-describedby="emailHelp" name="Nombre">
              <div class="form-text">Ingrese los nombres del estudiante</div>
              </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Apellidos estudiante</label>
-             <input type="text" class="form-control" name="Apellidos">
+             <input type="text" class="form-control" name="Apellidos" id="apellido">
              </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Numero de documento</label>
-             <input type="number" class="form-control" name="Documento">
+             <input type="number" class="form-control" name="Documento" id="documento">
              </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Nota 1</label>
-             <input type="number" class="form-control" name="PrimeraNota">
+             <input type="number" class="form-control" name="PrimeraNota" id="nota1">
              <div class="form-text">Ingrese un valor entre 20 a 100</div>
              </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Nota 3</label>
-             <input type="number" class="form-control" name="SegundaNota">
+             <input type="number" class="form-control" name="SegundaNota" id="nota2">
              <div class="form-text">Ingrese un valor entre 20 a 100</div>
              </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Nota 3</label>
-             <input type="number" class="form-control" name="TerceraNota">
+             <input type="number" class="form-control" name="TerceraNota" id="nota3">
              <div class="form-text">Ingrese un valor entre 20 a 100</div>
              </div>
-             <button type="submit" class="btn btn-primary">Enviar</button>
+            <div class="alert alert-danger" role="alert" id="aviso" style="display:none; "></div>
+             <button type="submit" class="btn btn-primary" id="botonsubmit">Enviar</button>
             </form>
             </div>
         </div>
     </div>
-    <script type="text/js" src="validacion.js"></script>
+    <script src="validacion.js"></script>
 {% endblock %}
