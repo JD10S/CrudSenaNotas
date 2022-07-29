@@ -14,7 +14,6 @@ class Home extends \Core\Controller{
     public function Registro(){
         $validacion = Ejemplo::getStudent($_POST);
         if(!isset($validacion[0])){
-            var_dump($validacion);
             Ejemplo::InsertData($_POST);
             $this->index(); 
         }else{

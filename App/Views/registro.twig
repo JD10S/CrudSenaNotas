@@ -27,6 +27,9 @@
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Numero de documento</label>
              <input type="number" class="form-control" name="Documento" id="documento">
+      <div id="validationServerUsernameFeedback" class="invalid-feedback">
+        Porfavor ingrese un valor valido de documento (10 digitos)
+      </div>
              </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Nota 1</label>
@@ -36,15 +39,15 @@
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Nota 3</label>
              <input type="number" class="form-control" name="SegundaNota" id="nota2">
-             <div class="form-text">Ingrese un valor entre 20 a 100</div>
+             <div class="form-text">Ingrese un valor entre 20 a 100m En caso de ingresar un valor invalido, será autocompletado al valor más cercano</div>
              </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Nota 3</label>
              <input type="number" class="form-control" name="TerceraNota" id="nota3">
-             <div class="form-text">Ingrese un valor entre 20 a 100</div>
+             <div class="form-text">Ingrese un valor entre 20 a 100m En caso de ingresar un valor invalido, será autocompletado al valor más cercano</div>
              </div>
             <div class="alert alert-danger" role="alert" id="aviso" style="display:none; "></div>
-             <button type="submit" class="btn btn-primary" id="botonsubmit">Enviar</button>
+             <button type="submit" class="btn btn-primary" id="botonsubmit" disabled>Enviar</button>
             </form>
             </div>
         </div>

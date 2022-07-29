@@ -5,7 +5,7 @@
         <h1 style=""> Notas de estudiantes </h1>
       <a href="?Home/registrar" class="btn btn-primary">Registrar otro estudiante</a>
     </div> <br>
-    <table class="table">
+    <table class="table  table-striped ">
   <thead>
     <tr>
       <th scope="col">TI</th>
@@ -25,10 +25,10 @@
       <th scope="row"> {{datos.doc}} </th>
       <td> {{datos.nom}} </td>
       <td> {{datos.ape}} </td>
-      <td>{{datos.not1}}</td>
-      <td>{{datos.not2}}</td>
-      <td>{{datos.not3}}</td>
-      <td>{{datos.prom}}</td>
+      <td {% if datos.not1 < 60 %} style="color: red; "{% endif %} > {{datos.not1}}</td>
+      <td {% if datos.not2 < 60 %} style="color: red; "{% endif %} >{{datos.not2}}</td>
+      <td {% if datos.not3 < 60 %} style="color: red; "{% endif %} >{{datos.not3}}</td>
+      <td {% if datos.prom < 60 %} style="color: red; "{% endif %} >{{datos.prom}}</td>
     </tr>
     {% endfor %}
     {% endif %}
