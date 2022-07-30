@@ -6,7 +6,7 @@ use \App\Models\Ejemplo;
 class Home extends \Core\Controller{
     public function index() {
         $posts = Ejemplo::getAll();
-        View::renderTemplate('index.twig', ['posts' => $posts]); 
+        View::renderTemplate('index.twig', ['posts' => $posts]);
     }
     public function registrar(){
         View::renderTemplate('registro.twig');
@@ -15,7 +15,7 @@ class Home extends \Core\Controller{
         $validacion = Ejemplo::getStudent($_POST);
         if(!isset($validacion[0])){
             Ejemplo::InsertData($_POST);
-            $this->index(); 
+            header('location: ?Home/index');
         }else{
             View::renderTemplate('registro.twig', ['error' => 'El número de documento ya existe']);
         }
