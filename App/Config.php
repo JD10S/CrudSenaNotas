@@ -12,7 +12,7 @@ class Config {
     // Contraseña base de datos
     const DB_Password = '';
     //Errores tipo desarrollador (true) o tipo cliente (false)
-    const ShowError = true; 
+    const ShowError = false; 
     //Logeo de errores
     const LogError = false;
 }
